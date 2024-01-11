@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Комментарии</title>
+  <style>
+    /* Глобальные стили страницы */
+    body {
+      font-family: Arial, sans-serif;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="news" class="news">
+        <h1>Новость</h1>
+        <div id="news">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Proin aliquet hendrerit orci et venenatis. Sed ligula felis, semper 
+        id odio eu, rutrum tincidunt est. Nulla ullamcorper mauris vel dui 
+        aliquet, eget pharetra turpis volutpat. Nunc neque ligula, vulputate 
+        a arcu ut, tempus dictum urna. Donec vel pretium est, eget fermentum 
+        lacus. Mauris sit amet viverra lectus, sed auctor felis. Integer eu 
+        dignissim arcu. Curabitur vel erat dictum, elementum justo nec, varius 
+        nulla.</div>
+    </div>
+    <comment-box></comment-box>
+  </div>
+
+  <template id="commentTemplate">
+    <style>
+      /* Стили для каждого комментария */
+      .comment {
+        padding-top: 1px;
+      }
+      .nested-comments {
+        margin-left: 20px;
+      }
+    </style>
+    <div class="comment">
+      <p><slot></slot></p>
+      <button class="like-btn">Понравилось <span class="like-count">0</span></button>
+      <button class="reply-btn">Комментировать</button>
+      <button class="delete-btn">Удалить</button>
+      <div class="nested-comments"></div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
